@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import repos.PostRepository;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import java.util.List;
 public class PostController {
 
 
-        private final PostRepository postDao;
+        private final PostController postDao;
 
         public PostController(PostController postDao) {
-            this.postDao = (PostRepository) postDao;
+            this.postDao = postDao;
         }
     @GetMapping("/posts")
     public String showPost(){
