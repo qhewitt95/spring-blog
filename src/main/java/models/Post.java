@@ -17,6 +17,16 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User owner;
+
+    public Post(String title, String body, User owner) {
+        this.title = title;
+        this.body = body;
+        this.owner = owner;
+    }
+
     public Post() {
     }
 

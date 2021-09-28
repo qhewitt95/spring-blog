@@ -16,11 +16,15 @@ import java.util.List;
 public class PostController {
 
 
-        private final PostController postDao;
+        /*private final PostController postDao;
 
-        public PostController(PostController postDao) {
-            this.postDao = postDao;
-        }
+    public PostController(PostController postDao) {
+        this.postDao = postDao;
+    }*/
+
+    /*public PostController(PostController postDao) {
+        this.postDao = postDao;
+    }*/
     @GetMapping("/posts")
     public String showPost(){
 
