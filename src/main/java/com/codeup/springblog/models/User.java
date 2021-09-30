@@ -1,4 +1,4 @@
-package models;
+package com.codeup.springblog.models;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,10 +18,20 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String email;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<Post> ads;
+    private List<Post> posts;
 
     public User() {
+    }
+
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
     }
 
     public Long getId() {
@@ -48,11 +58,27 @@ public class User {
         this.password = password;
     }
 
- /*   public List<Post> getPost() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /*   public List<Post> getPost() {
         return ads;
     }
 
     public void setPost(List<Post> ads) {
         this.ads = ads;
     }*/
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 }
