@@ -9,7 +9,6 @@ import java.util.Random;
 
 @Controller
 public class RollDiceController {
-
     @GetMapping("/roll-dice")
     public String rolldice(){
         return "roll-dice";
